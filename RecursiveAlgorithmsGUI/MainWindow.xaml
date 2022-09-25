@@ -9,13 +9,37 @@
     <Grid>
         <TabControl>
             <TabItem Header="Pyramid">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </Grid>
             </TabItem>
             <TabItem Header="Fractal">
-                <Grid Background="#FFE5E5E5"/>
+
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="204*"/>
+                        <RowDefinition Height="203*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="111*"/>
+                        <ColumnDefinition Width="286*"/>
+                    </Grid.ColumnDefinitions>
+                    <Canvas Grid.Column="1" Grid.RowSpan="2"/>
+                    <ScrollViewer Grid.Row="1">
+                        <TextBlock TextWrapping="Wrap" Text="Console log."/>
+                    </ScrollViewer>
+                    <TabControl>
+                        <TabItem Header="Settings" Margin="-2,-2,-51,0">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="Templates" Margin="50,-2,-96,0">
+                            <Button Content="Tree" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
         </TabControl>
-        <Canvas x:Name="Canva" Margin="0,24,0,0"/>
+
 
     </Grid>
 </Window>
