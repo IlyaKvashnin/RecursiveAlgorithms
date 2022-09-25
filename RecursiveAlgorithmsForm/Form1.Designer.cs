@@ -35,12 +35,18 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -61,7 +67,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1486, 654);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Pyramid";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -81,7 +87,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1486, 654);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Fractal";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
@@ -92,6 +98,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.tabControl2);
             this.splitContainer1.Panel1.Controls.Add(this.vScrollBar1);
             this.splitContainer1.Panel1.Controls.Add(this.textBox1);
             this.splitContainer1.Size = new System.Drawing.Size(1480, 648);
@@ -112,6 +119,47 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(479, 318);
             this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Console log.";
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Location = new System.Drawing.Point(15, 9);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(467, 312);
+            this.tabControl2.TabIndex = 2;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(8, 46);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(451, 258);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Settings";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.button2);
+            this.tabPage4.Location = new System.Drawing.Point(8, 46);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(451, 258);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Templates";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(2, 8);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 46);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Tree";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -128,6 +176,8 @@
             this.splitContainer1.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -141,5 +191,9 @@
         private SplitContainer splitContainer1;
         private VScrollBar vScrollBar1;
         private TextBox textBox1;
+        private TabControl tabControl2;
+        private TabPage tabPage3;
+        private TabPage tabPage4;
+        private Button button2;
     }
 }
