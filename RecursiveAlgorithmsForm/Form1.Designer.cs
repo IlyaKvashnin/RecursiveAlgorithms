@@ -35,8 +35,12 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Length = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,6 +52,8 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,6 +129,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Location = new System.Drawing.Point(8, 46);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -131,9 +138,32 @@
             this.tabPage3.Text = "Settings";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Length});
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 82;
+            this.dataGridView1.RowTemplate.Height = 41;
+            this.dataGridView1.Size = new System.Drawing.Size(439, 249);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // Length
+            // 
+            this.Length.HeaderText = "Column1";
+            this.Length.MinimumWidth = 10;
+            this.Length.Name = "Length";
+            this.Length.Width = 200;
+            // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.button2);
+            this.tabPage4.Controls.Add(this.comboBox1);
+            this.tabPage4.Controls.Add(this.btnStop);
+            this.tabPage4.Controls.Add(this.btnStart);
             this.tabPage4.Location = new System.Drawing.Point(8, 46);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -142,15 +172,40 @@
             this.tabPage4.Text = "Templates";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // comboBox1
             // 
-            this.button2.Location = new System.Drawing.Point(2, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 46);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Tree";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Tree 1",
+            "Tree 2",
+            "Tree 3",
+            "Extended Tree"});
+            this.comboBox1.Location = new System.Drawing.Point(4, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(242, 40);
+            this.comboBox1.TabIndex = 2;
+            this.comboBox1.Text = "Select template";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(298, 209);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(150, 46);
+            this.btnStop.TabIndex = 1;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(0, 212);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(150, 46);
+            this.btnStart.TabIndex = 0;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // vScrollBar1
             // 
@@ -194,6 +249,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -211,7 +268,11 @@
         private TabControl tabControl2;
         private TabPage tabPage3;
         private TabPage tabPage4;
-        private Button button2;
         private Panel panel1;
+        private Button btnStop;
+        private Button btnStart;
+        private ComboBox comboBox1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Length;
     }
 }
