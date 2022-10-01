@@ -54,7 +54,7 @@ namespace RecursiveAlgorithmsForm
             }
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private void btnStartFractal_Click(object sender, EventArgs e)
         {
             FractalTree.Paint = true;
             panel1.Invalidate();
@@ -94,7 +94,6 @@ namespace RecursiveAlgorithmsForm
 
         private void SolveFor(int diskSize)
         {
-            //txtDurum.Text = "Solving..."; this.Refresh();//To show "solving" text in status bar...No refresh, no change :)
             solutionMoves = s.SolveHanoi(diskSize);
             int i = 1;
             listBox1.Items.Clear();
@@ -103,7 +102,7 @@ namespace RecursiveAlgorithmsForm
                 listBox1.Items.Add(i + ". " + m.poleFrom + "→ " + m.poleTo);
                 i++;
             }
-            //txtDurum.Text = "Finished Solving. Total Move Count : " + (Math.Pow(2, diskSize) - 1).ToString() + ". Click Play to watch moves";
+            
         }
 
         private void init(int diskSize)
@@ -127,7 +126,7 @@ namespace RecursiveAlgorithmsForm
             for (int i = 0; i < diskSize; i++)
             {
                 btn = new Button();
-                btn.Location = new Point(341 + (i * 5), 300 - (i * 20));
+                btn.Location = new Point(342 + (i * 5), 306 - (i * 20));
                 btn.Size = new Size(132 - (i * 10), 20);
                 btn.FlatAppearance.BorderSize = 0;
                 btn.FlatStyle = FlatStyle.Flat;
@@ -204,10 +203,10 @@ namespace RecursiveAlgorithmsForm
             return result;
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private void btnStartHanoiTowers_Click(object sender, EventArgs e)
         {
             moveIndex = 0;
-            timer1.Start();
+            timer2.Start();
             button3.Enabled = false;
         }
         private void makeMove(Move m)
@@ -287,13 +286,13 @@ namespace RecursiveAlgorithmsForm
             switch (PoleIndex)
             {
                 case 1:
-                    endPoint = new Point(341 + ((132 - toMove.Size.Width) / 2), 300 - ((Pole1.Count()) * 20));
+                    endPoint = new Point(342 + ((132 - toMove.Size.Width) / 2), 306 - ((Pole1.Count()) * 20));
                     break;
                 case 2:
-                    endPoint = new Point(481 + ((132 - toMove.Size.Width) / 2), 300 - ((Pole2.Count()) * 20));
+                    endPoint = new Point(482 + ((132 - toMove.Size.Width) / 2), 306 - ((Pole2.Count()) * 20));
                     break;
                 case 3:
-                    endPoint = new Point(621 + ((132 - toMove.Size.Width) / 2), 300 - ((Pole3.Count()) * 20));
+                    endPoint = new Point(622 + ((132 - toMove.Size.Width) / 2), 306 - ((Pole3.Count()) * 20));
                     break;
                 default:
                     break;
@@ -311,11 +310,11 @@ namespace RecursiveAlgorithmsForm
         {
             switch (cmbHiz.SelectedIndex)
             {
-                case 0: timer1.Interval = 2000; break;
-                case 1: timer1.Interval = 1000; break;
-                case 2: timer1.Interval = 500; break;
-                case 3: timer1.Interval = 250; break;
-                case 4: timer1.Interval = 200; break;
+                case 0: timer2.Interval = 2000; break;
+                case 1: timer2.Interval = 1000; break;
+                case 2: timer2.Interval = 500; break;
+                case 3: timer2.Interval = 250; break;
+                case 4: timer2.Interval = 200; break;
                 default: break;
             }
         }
@@ -346,31 +345,19 @@ namespace RecursiveAlgorithmsForm
             
         }
 
-        private void timer1_Tick_1(object sender, EventArgs e)
+        private void timer2_Tick_1(object sender, EventArgs e)
         {
             if (moveIndex < solutionMoves.Count)
             {
                 Move m = solutionMoves.ElementAt(moveIndex);
-                //txtDurum.Text = moveIndex + 1 + ".Move = From Pole: " + m.poleFrom + " → To Pole: " + m.poleTo;
                 makeMove(m);
                 moveIndex++;
                 listBox1.SelectedIndex = moveIndex - 1;
             }
             else
             {
-                timer1.Stop();
+                timer2.Stop();
                 button3.Enabled = false;
-                
-                //foreach (var elem in this.Controls)
-                //{
-                //    if (elem is Button)
-                //    {
-                //        Button a = (Button)elem;
-                //        a.Dispose();
-                //    }
-                //}
-
-                //txtDurum.Text = "Finished Playing. You can start with a new setting.";
             }
         }
     }

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -42,22 +44,24 @@
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.columnAngle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnStop = new System.Windows.Forms.Button();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.btnStart = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.columnAngle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -70,11 +74,10 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(2, 6);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tabControl1.Location = new System.Drawing.Point(3, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(809, 332);
+            this.tabControl1.Size = new System.Drawing.Size(1502, 708);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
@@ -96,7 +99,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tabPage1.Size = new System.Drawing.Size(801, 304);
+            this.tabPage1.Size = new System.Drawing.Size(1494, 680);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Pyramid";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -182,7 +185,7 @@
             this.button3.TabIndex = 11;
             this.button3.Text = "старт";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.btnStart_Click);
+            this.button3.Click += new System.EventHandler(this.btnStartHanoiTowers_Click);
             // 
             // button1
             // 
@@ -212,10 +215,17 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Шаги для решения";
             // 
-            // timer1
+            // tabPage2
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            this.tabPage2.Controls.Add(this.splitContainer1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tabPage2.Size = new System.Drawing.Size(1494, 680);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Fractal";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
@@ -235,8 +245,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1480, 648);
-            this.splitContainer1.SplitterDistance = 485;
+            this.splitContainer1.Size = new System.Drawing.Size(1490, 678);
+            this.splitContainer1.SplitterDistance = 488;
             this.splitContainer1.TabIndex = 0;
             // 
             // panel2
@@ -258,7 +268,7 @@
             "Extended Tree"});
             this.comboBox1.Location = new System.Drawing.Point(3, 97);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(242, 40);
+            this.comboBox1.Size = new System.Drawing.Size(242, 23);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.Text = "Select template";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -297,6 +307,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(468, 88);
             this.dataGridView1.TabIndex = 46;
             // 
+            // columnAngle
+            // 
+            this.columnAngle.HeaderText = "Angle";
+            this.columnAngle.MinimumWidth = 10;
+            this.columnAngle.Name = "columnAngle";
+            // 
             // btnStop
             // 
             this.btnStop.Location = new System.Drawing.Point(324, 327);
@@ -322,7 +338,7 @@
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            this.btnStart.Click += new System.EventHandler(this.btnStartFractal_Click);
             // 
             // textBox1
             // 
@@ -339,38 +355,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(991, 648);
+            this.panel1.Size = new System.Drawing.Size(998, 678);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // columnAngle
+            // timer2
             // 
-            this.columnAngle.HeaderText = "Angle";
-            this.columnAngle.MinimumWidth = 10;
-            this.columnAngle.Name = "columnAngle";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tabPage3.Size = new System.Drawing.Size(243, 118);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Settings";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.splitContainer1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tabPage2.Size = new System.Drawing.Size(801, 304);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Fractal";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick_1);
             // 
             // Form1
             // 
@@ -388,6 +380,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -413,7 +406,7 @@
         private ComboBox cmbHiz;
         private Button button3;
         private Button button1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
         private Label label4;
         private Label label3;
         private Label label2;
@@ -428,5 +421,6 @@
         private Panel panel2;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn columnAngle;
+        
     }
 }
