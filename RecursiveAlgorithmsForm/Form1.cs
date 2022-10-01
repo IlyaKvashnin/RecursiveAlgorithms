@@ -1,6 +1,7 @@
 ﻿using HanoiTowers;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -24,6 +25,7 @@ namespace RecursiveAlgorithmsForm
         List<Button> Pole1 = new List<Button>();
         List<Button> Pole2 = new List<Button>();
         List<Button> Pole3 = new List<Button>();
+        List<Button> btnstoDelete = new List<Button>();
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -54,7 +56,7 @@ namespace RecursiveAlgorithmsForm
             Pole2.Clear();
             Pole3.Clear();
             button3.Enabled = true;
-            List<Button> btnstoDelete = new List<Button>();
+            
             foreach (Control c in this.Controls)
             {
                 Button b = c as Button;
@@ -76,7 +78,8 @@ namespace RecursiveAlgorithmsForm
                 btn.BackColor = RandomColor();
                 btn.BringToFront();
                 this.Controls.Add(btn);
-                this.Controls.SetChildIndex(btn, 0);
+                this.Controls.SetChildIndex(btn, 100);
+                btn.BringToFront();
                 Pole1.Add(btn);
             }
             pictureBox1.SendToBack();
@@ -260,6 +263,32 @@ namespace RecursiveAlgorithmsForm
                 default: break;
             }
         }
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+
+            switch (e.TabPageIndex)
+            {
+                case 0:
+                    init(3);
+                    break;
+                case 1:
+                    foreach (Control c in this.Controls)
+                    {
+                        Button b = c as Button;
+                        if (null != b)
+                        { btnstoDelete.Add(b); }
+                    }
+                    foreach (Button b in btnstoDelete)
+                    {
+                        b.Dispose();
+                    }
+                    break;
+                default:
+                    MessageBox.Show("Шойтан, как ты суда попал?");
+                    break;
+            }
+            
+        }
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
@@ -275,6 +304,16 @@ namespace RecursiveAlgorithmsForm
             {
                 timer1.Stop();
                 button3.Enabled = false;
+                
+                //foreach (var elem in this.Controls)
+                //{
+                //    if (elem is Button)
+                //    {
+                //        Button a = (Button)elem;
+                //        a.Dispose();
+                //    }
+                //}
+
                 //txtDurum.Text = "Finished Playing. You can start with a new setting.";
             }
         }
