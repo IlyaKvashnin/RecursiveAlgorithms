@@ -11,69 +11,102 @@ using System.Threading;
 using System.Windows.Forms;
 
 using RecursiveAlgorithmsForm.Fractals;
+using System.DirectoryServices.ActiveDirectory;
 
 namespace RecursiveAlgorithmsForm
 {
     public partial class Form1 : Form
     {
+        private CancellationTokenSource cts;
+        private readonly List<List<Point>> lines = new List<List<Point>>();
         public Form1()
         {
             InitializeComponent();
-            dataGridView1.Rows.Add();
+            cmbSelectTemplate.SelectedIndexChanged += (s, e) => Draw();
+            nudSize.ValueChanged += (s, e) => Draw();
+            nudAngle.ValueChanged += (s, e) => Draw();
+            nudOffsetX.ValueChanged += (s, e) => Draw();
+            nudOffsetY.ValueChanged += (s, e) => Draw();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        protected override void OnFormClosed(FormClosedEventArgs e)
         {
-            
-            if (FractalTree.Paint == true)
-            { 
-                if (comboBox1.SelectedIndex == 0)
-                {
-                    FractalTree.DrawFractal(panel1.Width / 2, panel1.Height / 128, 220,0, -15, 1000, e, panel1);
-                } 
-                else if(comboBox1.SelectedIndex == 1)
-                {
-                    FractalTree.DrawFractal(panel1.Width / 2, panel1.Height / 128, 220, 0, 50,1000, e, panel1);
-                }
-                else if (comboBox1.SelectedIndex == 2)
-                {
-                    FractalTree.DrawFractal(panel1.Width / 2, panel1.Height / 128, 220, 0, 30, 20, e, panel1);
-                }
-                else if (comboBox1.SelectedIndex == 3)
-                {
-                    FractalTree.ExtendedDrawFractal(panel1.Width / 2, panel1.Height / 128, 220, 0, e, panel1);
-                } 
-                else
-                {
-                    string str = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    double v = double.Parse(str);
-                    FractalTree.DrawFractal(panel1.Width / 2, panel1.Height / 128, 220, 0, v, 1000, e, panel1);
+            base.OnFormClosed(e);
+            cts?.Cancel();
+            cts?.Dispose();
+        }
 
-                }
+        private void drawingPanel_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (var line in lines.Where(l => l.Count == 2).ToList())
+                e.Graphics.DrawCurve(Pens.Black, line.ToArray());
+        }
 
+        private void btnStartDraw_Click(object sender, EventArgs e) => Draw();
+
+        private void BtnStopDraw_Click(object sender, EventArgs e)
+        {
+            cts?.Cancel();
+            lines.Clear();
+            drawingPanel.Invalidate();
+        }
+
+        private async void Draw()
+        {
+            if (!btnStartDraw.Enabled) return;
+            btnStartDraw.Enabled = false;
+            lines.Clear();
+
+            var canvas = drawingPanel.ClientRectangle;
+
+            try
+            {
+                using (var cancelTS = new CancellationTokenSource())
+                {
+                    cancelTS.Token.ThrowIfCancellationRequested();
+                    cts = cancelTS;
+
+                    if (tcMain.SelectedTab == tpFractal)
+                    {
+                        switch (cmbSelectTemplate.SelectedIndex)
+                        {
+                            case 0:
+                                var len = (int)nudSize.Value;
+                                var angle = (int)nudAngle.Value;
+                                var xo = (int)nudOffsetX.Value;
+                                var yo = (int)nudOffsetY.Value;
+
+                                await FractalTree.GetFractalPointsAsync(canvas,
+                                    xo + canvas.Width / 2, yo + canvas.Height / 2,
+                                    len,0, angle, lines, cts.Token);
+                                break;
+                            case 1:
+                                // Call another FractalTree algorithm...
+                                break;
+                        }
+                    }
+                  //  else if (tcMain.SelectedTab == tpPyramid)
+                    //{
+                        // Pyramid algorithms 
+                    //}
+                }
+            }
+            catch (OperationCanceledException)
+            {
+                Console.WriteLine("Canceld...!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                btnStartDraw.Enabled = true;
+                drawingPanel.Invalidate();
+                cts = null;
             }
         }
 
-        private void btnStartFractal_Click(object sender, EventArgs e)
-        {
-            FractalTree.Paint = true;
-            panel1.Invalidate();
-        }
-
-        private void btnStop_Click(object sender, EventArgs e)
-        {
-            FractalTree.Paint = false;
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-    
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         Solver s = new Solver();
         Random rnd = new Random();
         int moveIndex = 0;
