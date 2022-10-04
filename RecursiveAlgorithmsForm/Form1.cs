@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 using RecursiveAlgorithmsForm.Fractals;
 using System.DirectoryServices.ActiveDirectory;
+using System.Diagnostics;
 
 namespace RecursiveAlgorithmsForm
 {
@@ -19,6 +20,7 @@ namespace RecursiveAlgorithmsForm
     {
         private CancellationTokenSource cts;
         private readonly List<List<Point>> lines = new List<List<Point>>();
+        public static bool ExtendedFractal = false;
         public Form1()
         {
             InitializeComponent();
@@ -39,7 +41,10 @@ namespace RecursiveAlgorithmsForm
         private void drawingPanel_Paint(object sender, PaintEventArgs e)
         {
             foreach (var line in lines.Where(l => l.Count == 2).ToList())
+            {
                 e.Graphics.DrawCurve(Pens.Black, line.ToArray());
+            }
+ 
         }
 
         private void btnStartDraw_Click(object sender, EventArgs e) => Draw();
@@ -71,18 +76,21 @@ namespace RecursiveAlgorithmsForm
                         switch (cmbSelectTemplate.SelectedIndex)
                         {
                             case 0:
-                                nudSize.Value = 0;
+                                nudSize.Value = 250;
                                 nudAngle.Value = 0;
                                 nudOffsetX.Value = 0;
-                                nudOffsetY.Value = 0;
+                                nudOffsetY.Value = -350;
                                 var len = (int)nudSize.Value;
                                 var angle = (int)nudAngle.Value;
                                 var xo = (int)nudOffsetX.Value;
                                 var yo = (int)nudOffsetY.Value;
-
-                                await FractalTree.GetFractalPointsAsync(canvas,
+                                if (nudAngle.Value != 0)
+                                {
+                                    await FractalTree.GetFractalPointsAsync(canvas,
                                     xo + canvas.Width / 2, yo + canvas.Height / 2,
                                     len, 0, angle, lines, cts.Token);
+
+                                }
                                 break;
                             case 1:
                                 nudSize.Value = 250;
@@ -96,13 +104,26 @@ namespace RecursiveAlgorithmsForm
                                 break;
                             case 2:
                                 nudSize.Value = 250;
-                                nudAngle.Value = 30;
+                                nudAngle.Value = -50;
                                 nudOffsetX.Value = 0;
                                 nudOffsetY.Value = -350;
 
                                 await FractalTree.GetFractalPointsAsync(canvas,
                                     (int)nudOffsetX.Value + canvas.Width / 2, (int)nudOffsetY.Value + canvas.Height / 2,
                                     (int)nudSize.Value, 0, (int)nudAngle.Value, lines, cts.Token);
+                                break;
+                            case 3:
+                                nudSize.Value = 250;
+                                nudAngle.Value = 30;
+                                nudOffsetX.Value = 0;
+                                nudOffsetY.Value = -350;
+                                ExtendedFractal = true;
+                                Stopwatch stopwatch = new();
+                                cts.CancelAfter(150);
+                                await FractalTree.GetFractalPointsAsync(canvas,
+                                    (int)nudOffsetX.Value + canvas.Width / 2, (int)nudOffsetY.Value + canvas.Height / 2,
+                                    (int)nudSize.Value, 0, (int)nudAngle.Value, lines, cts.Token);
+                                ExtendedFractal = false;
                                 break;
                         }
                     }

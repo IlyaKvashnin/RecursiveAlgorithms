@@ -50,8 +50,11 @@ namespace RecursiveAlgorithmsForm.Fractals
                         (int)(len / 1.5), angle + secondAngle,secondAngle, lines, token);
                     await GetFractalPointsAsync(camvas, (int)x1, (int)y1,
                         (int)(len / 1.5), angle - secondAngle,secondAngle, lines, token);
-                    //await GetFractalPointsAsync(camvas, (int)x1, (int)y1, 
-                    //    (int)(len / 1.5), angle - 15, lines, token);
+                    if (Form1.ExtendedFractal == true)
+                    {
+                        await GetFractalPointsAsync(camvas, (int)x1, (int)y1,
+                        (int)(len / 1.5), angle - 15, secondAngle, lines, token) ;
+                    }
                 }
             }, token);
         }
