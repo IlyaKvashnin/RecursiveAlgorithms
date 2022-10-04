@@ -127,7 +127,7 @@ namespace RecursiveAlgorithmsForm
 
         private void SolveFor(int diskSize)
         {
-            solutionMoves = s.SolveHanoi(diskSize);
+            solutionMoves = s.SolveHanoiRecursive(diskSize);
             int i = 1;
             listBox1.Items.Clear();
             foreach (Move m in solutionMoves)
