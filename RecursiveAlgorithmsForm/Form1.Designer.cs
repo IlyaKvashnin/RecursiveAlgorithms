@@ -78,11 +78,11 @@
             // 
             this.tcMain.Controls.Add(this.tpPyramid);
             this.tcMain.Controls.Add(this.tpFractal);
-            this.tcMain.Location = new System.Drawing.Point(3, 16);
-            this.tcMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tcMain.Location = new System.Drawing.Point(5, 26);
+            this.tcMain.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(989, 478);
+            this.tcMain.Size = new System.Drawing.Size(1607, 765);
             this.tcMain.TabIndex = 0;
             this.tcMain.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
@@ -100,11 +100,11 @@
             this.tpPyramid.Controls.Add(this.button1);
             this.tpPyramid.Controls.Add(this.listBox1);
             this.tpPyramid.Controls.Add(this.label1);
-            this.tpPyramid.Location = new System.Drawing.Point(4, 29);
-            this.tpPyramid.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tpPyramid.Location = new System.Drawing.Point(8, 46);
+            this.tpPyramid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpPyramid.Name = "tpPyramid";
-            this.tpPyramid.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tpPyramid.Size = new System.Drawing.Size(981, 445);
+            this.tpPyramid.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpPyramid.Size = new System.Drawing.Size(1591, 711);
             this.tpPyramid.TabIndex = 1;
             this.tpPyramid.Text = "Pyramid";
             this.tpPyramid.UseVisualStyleBackColor = true;
@@ -112,27 +112,30 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(769, 17);
+            this.label4.Location = new System.Drawing.Point(1250, 27);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 20);
+            this.label4.Size = new System.Drawing.Size(27, 32);
             this.label4.TabIndex = 19;
             this.label4.Text = "3";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(610, 17);
+            this.label3.Location = new System.Drawing.Point(991, 27);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 20);
+            this.label3.Size = new System.Drawing.Size(27, 32);
             this.label3.TabIndex = 17;
             this.label3.Text = "2";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(450, 17);
+            this.label2.Location = new System.Drawing.Point(731, 27);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(17, 20);
+            this.label2.Size = new System.Drawing.Size(27, 32);
             this.label2.TabIndex = 15;
             this.label2.Text = "1";
             // 
@@ -140,10 +143,10 @@
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(701, 3);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(1139, 5);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(153, 405);
+            this.pictureBox3.Size = new System.Drawing.Size(247, 647);
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
@@ -151,10 +154,10 @@
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(541, 3);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(879, 5);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(153, 405);
+            this.pictureBox2.Size = new System.Drawing.Size(247, 647);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
@@ -162,10 +165,10 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(381, 3);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(619, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(153, 405);
+            this.pictureBox1.Size = new System.Drawing.Size(247, 647);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -178,20 +181,20 @@
             "нормально - 2 в сек",
             "быстро - 4 в сек",
             "быстрее - 5 в сек"});
-            this.cmbHiz.Location = new System.Drawing.Point(158, 7);
-            this.cmbHiz.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbHiz.Location = new System.Drawing.Point(257, 11);
+            this.cmbHiz.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cmbHiz.Name = "cmbHiz";
-            this.cmbHiz.Size = new System.Drawing.Size(157, 28);
+            this.cmbHiz.Size = new System.Drawing.Size(253, 40);
             this.cmbHiz.TabIndex = 13;
             this.cmbHiz.Text = "Скорость";
             this.cmbHiz.SelectedIndexChanged += new System.EventHandler(this.cmbHiz_IndexChanged);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(88, 5);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Location = new System.Drawing.Point(143, 8);
+            this.button3.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(63, 31);
+            this.button3.Size = new System.Drawing.Size(102, 50);
             this.button3.TabIndex = 11;
             this.button3.Text = "старт";
             this.button3.UseVisualStyleBackColor = true;
@@ -199,10 +202,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(7, 5);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(11, 8);
+            this.button1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(74, 31);
+            this.button1.Size = new System.Drawing.Size(120, 50);
             this.button1.TabIndex = 9;
             this.button1.Text = "новый";
             this.button1.UseVisualStyleBackColor = true;
@@ -211,30 +214,31 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(7, 69);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listBox1.ItemHeight = 32;
+            this.listBox1.Location = new System.Drawing.Point(11, 110);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(164, 324);
+            this.listBox1.Size = new System.Drawing.Size(264, 516);
             this.listBox1.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 40);
+            this.label1.Location = new System.Drawing.Point(11, 64);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 20);
+            this.label1.Size = new System.Drawing.Size(223, 32);
             this.label1.TabIndex = 5;
             this.label1.Text = "Шаги для решения";
             // 
             // tpFractal
             // 
             this.tpFractal.Controls.Add(this.splitContainer1);
-            this.tpFractal.Location = new System.Drawing.Point(4, 29);
-            this.tpFractal.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tpFractal.Location = new System.Drawing.Point(8, 46);
+            this.tpFractal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpFractal.Name = "tpFractal";
-            this.tpFractal.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tpFractal.Size = new System.Drawing.Size(981, 445);
+            this.tpFractal.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpFractal.Size = new System.Drawing.Size(1591, 711);
             this.tpFractal.TabIndex = 1;
             this.tpFractal.Text = "Fractal";
             this.tpFractal.UseVisualStyleBackColor = true;
@@ -242,8 +246,8 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(2, 1);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.splitContainer1.Location = new System.Drawing.Point(3, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -263,16 +267,17 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.drawingPanel);
-            this.splitContainer1.Size = new System.Drawing.Size(977, 443);
-            this.splitContainer1.SplitterDistance = 319;
-            this.splitContainer1.SplitterWidth = 5;
+            this.splitContainer1.Size = new System.Drawing.Size(1585, 707);
+            this.splitContainer1.SplitterDistance = 517;
+            this.splitContainer1.SplitterWidth = 8;
             this.splitContainer1.TabIndex = 0;
             // 
             // BtnStopDraw
             // 
-            this.BtnStopDraw.Location = new System.Drawing.Point(222, 411);
+            this.BtnStopDraw.Location = new System.Drawing.Point(361, 658);
+            this.BtnStopDraw.Margin = new System.Windows.Forms.Padding(5);
             this.BtnStopDraw.Name = "BtnStopDraw";
-            this.BtnStopDraw.Size = new System.Drawing.Size(94, 29);
+            this.BtnStopDraw.Size = new System.Drawing.Size(153, 46);
             this.BtnStopDraw.TabIndex = 10;
             this.BtnStopDraw.Text = "Stop";
             this.BtnStopDraw.UseVisualStyleBackColor = true;
@@ -280,9 +285,10 @@
             // 
             // btnStartDraw
             // 
-            this.btnStartDraw.Location = new System.Drawing.Point(0, 411);
+            this.btnStartDraw.Location = new System.Drawing.Point(0, 658);
+            this.btnStartDraw.Margin = new System.Windows.Forms.Padding(5);
             this.btnStartDraw.Name = "btnStartDraw";
-            this.btnStartDraw.Size = new System.Drawing.Size(94, 29);
+            this.btnStartDraw.Size = new System.Drawing.Size(153, 46);
             this.btnStartDraw.TabIndex = 9;
             this.btnStartDraw.Text = "Start";
             this.btnStartDraw.UseVisualStyleBackColor = true;
@@ -291,85 +297,136 @@
             // lblOffsetY
             // 
             this.lblOffsetY.AutoSize = true;
-            this.lblOffsetY.Location = new System.Drawing.Point(72, 201);
+            this.lblOffsetY.Location = new System.Drawing.Point(117, 322);
+            this.lblOffsetY.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblOffsetY.Name = "lblOffsetY";
-            this.lblOffsetY.Size = new System.Drawing.Size(68, 20);
+            this.lblOffsetY.Size = new System.Drawing.Size(111, 32);
             this.lblOffsetY.TabIndex = 8;
             this.lblOffsetY.Text = "Offset Y :";
             // 
             // lblOffsetX
             // 
             this.lblOffsetX.AutoSize = true;
-            this.lblOffsetX.Location = new System.Drawing.Point(72, 155);
+            this.lblOffsetX.Location = new System.Drawing.Point(117, 248);
+            this.lblOffsetX.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblOffsetX.Name = "lblOffsetX";
-            this.lblOffsetX.Size = new System.Drawing.Size(69, 20);
+            this.lblOffsetX.Size = new System.Drawing.Size(112, 32);
             this.lblOffsetX.TabIndex = 7;
             this.lblOffsetX.Text = "Offset X :";
             // 
             // lblAngle
             // 
             this.lblAngle.AutoSize = true;
-            this.lblAngle.Location = new System.Drawing.Point(72, 108);
+            this.lblAngle.Location = new System.Drawing.Point(117, 173);
+            this.lblAngle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblAngle.Name = "lblAngle";
-            this.lblAngle.Size = new System.Drawing.Size(55, 20);
+            this.lblAngle.Size = new System.Drawing.Size(88, 32);
             this.lblAngle.TabIndex = 6;
             this.lblAngle.Text = "Angle :";
             // 
             // lblSize
             // 
             this.lblSize.AutoSize = true;
-            this.lblSize.Location = new System.Drawing.Point(72, 63);
+            this.lblSize.Location = new System.Drawing.Point(117, 101);
+            this.lblSize.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblSize.Name = "lblSize";
-            this.lblSize.Size = new System.Drawing.Size(43, 20);
+            this.lblSize.Size = new System.Drawing.Size(69, 32);
             this.lblSize.TabIndex = 5;
             this.lblSize.Text = "Size :";
             // 
             // nudOffsetY
             // 
-            this.nudOffsetY.Location = new System.Drawing.Point(151, 199);
+            this.nudOffsetY.Location = new System.Drawing.Point(245, 318);
+            this.nudOffsetY.Margin = new System.Windows.Forms.Padding(5);
+            this.nudOffsetY.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudOffsetY.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
             this.nudOffsetY.Name = "nudOffsetY";
-            this.nudOffsetY.Size = new System.Drawing.Size(150, 27);
+            this.nudOffsetY.Size = new System.Drawing.Size(244, 39);
             this.nudOffsetY.TabIndex = 4;
             // 
             // nudOffsetX
             // 
-            this.nudOffsetX.Location = new System.Drawing.Point(151, 153);
+            this.nudOffsetX.Location = new System.Drawing.Point(245, 245);
+            this.nudOffsetX.Margin = new System.Windows.Forms.Padding(5);
+            this.nudOffsetX.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudOffsetX.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
             this.nudOffsetX.Name = "nudOffsetX";
-            this.nudOffsetX.Size = new System.Drawing.Size(150, 27);
+            this.nudOffsetX.Size = new System.Drawing.Size(244, 39);
             this.nudOffsetX.TabIndex = 3;
             // 
             // nudAngle
             // 
-            this.nudAngle.Location = new System.Drawing.Point(151, 106);
+            this.nudAngle.Location = new System.Drawing.Point(245, 170);
+            this.nudAngle.Margin = new System.Windows.Forms.Padding(5);
+            this.nudAngle.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.nudAngle.Minimum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            -2147483648});
             this.nudAngle.Name = "nudAngle";
-            this.nudAngle.Size = new System.Drawing.Size(150, 27);
+            this.nudAngle.Size = new System.Drawing.Size(244, 39);
             this.nudAngle.TabIndex = 2;
             // 
             // nudSize
             // 
-            this.nudSize.Location = new System.Drawing.Point(151, 61);
+            this.nudSize.Location = new System.Drawing.Point(245, 98);
+            this.nudSize.Margin = new System.Windows.Forms.Padding(5);
+            this.nudSize.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudSize.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
             this.nudSize.Name = "nudSize";
-            this.nudSize.Size = new System.Drawing.Size(150, 27);
+            this.nudSize.Size = new System.Drawing.Size(244, 39);
             this.nudSize.TabIndex = 1;
             // 
             // cmbSelectTemplate
             // 
             this.cmbSelectTemplate.FormattingEnabled = true;
             this.cmbSelectTemplate.Items.AddRange(new object[] {
+            "Custom",
             "Tree 1",
             "Tree 2",
             "Tree 3"});
-            this.cmbSelectTemplate.Location = new System.Drawing.Point(22, 14);
+            this.cmbSelectTemplate.Location = new System.Drawing.Point(36, 22);
+            this.cmbSelectTemplate.Margin = new System.Windows.Forms.Padding(5);
             this.cmbSelectTemplate.Name = "cmbSelectTemplate";
-            this.cmbSelectTemplate.Size = new System.Drawing.Size(279, 28);
+            this.cmbSelectTemplate.Size = new System.Drawing.Size(451, 40);
             this.cmbSelectTemplate.TabIndex = 0;
             this.cmbSelectTemplate.Text = "Select template of tree";
             // 
             // drawingPanel
             // 
-            this.drawingPanel.Location = new System.Drawing.Point(3, 3);
+            this.drawingPanel.Location = new System.Drawing.Point(5, 5);
+            this.drawingPanel.Margin = new System.Windows.Forms.Padding(5);
             this.drawingPanel.Name = "drawingPanel";
-            this.drawingPanel.Size = new System.Drawing.Size(650, 438);
+            this.drawingPanel.Size = new System.Drawing.Size(1056, 701);
             this.drawingPanel.TabIndex = 0;
             this.drawingPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.drawingPanel_Paint);
             // 
@@ -380,11 +437,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(993, 491);
+            this.ClientSize = new System.Drawing.Size(1611, 791);
             this.Controls.Add(this.tcMain);
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

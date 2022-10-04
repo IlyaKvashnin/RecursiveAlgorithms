@@ -71,6 +71,10 @@ namespace RecursiveAlgorithmsForm
                         switch (cmbSelectTemplate.SelectedIndex)
                         {
                             case 0:
+                                nudSize.Value = 0;
+                                nudAngle.Value = 0;
+                                nudOffsetX.Value = 0;
+                                nudOffsetY.Value = 0;
                                 var len = (int)nudSize.Value;
                                 var angle = (int)nudAngle.Value;
                                 var xo = (int)nudOffsetX.Value;
@@ -78,10 +82,27 @@ namespace RecursiveAlgorithmsForm
 
                                 await FractalTree.GetFractalPointsAsync(canvas,
                                     xo + canvas.Width / 2, yo + canvas.Height / 2,
-                                    len,0, angle, lines, cts.Token);
+                                    len, 0, angle, lines, cts.Token);
                                 break;
                             case 1:
-                                // Call another FractalTree algorithm...
+                                nudSize.Value = 250;
+                                nudAngle.Value = 30;
+                                nudOffsetX.Value = 0;
+                                nudOffsetY.Value = -350;
+
+                                await FractalTree.GetFractalPointsAsync(canvas,
+                                    (int)nudOffsetX.Value + canvas.Width / 2, (int)nudOffsetY.Value + canvas.Height / 2,
+                                    (int)nudSize.Value, 0, (int)nudAngle.Value, lines, cts.Token);
+                                break;
+                            case 2:
+                                nudSize.Value = 250;
+                                nudAngle.Value = 30;
+                                nudOffsetX.Value = 0;
+                                nudOffsetY.Value = -350;
+
+                                await FractalTree.GetFractalPointsAsync(canvas,
+                                    (int)nudOffsetX.Value + canvas.Width / 2, (int)nudOffsetY.Value + canvas.Height / 2,
+                                    (int)nudSize.Value, 0, (int)nudAngle.Value, lines, cts.Token);
                                 break;
                         }
                     }
