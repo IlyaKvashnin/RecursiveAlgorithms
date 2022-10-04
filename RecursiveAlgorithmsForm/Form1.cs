@@ -76,10 +76,6 @@ namespace RecursiveAlgorithmsForm
                         switch (cmbSelectTemplate.SelectedIndex)
                         {
                             case 0:
-                                nudSize.Value = 250;
-                                nudAngle.Value = 0;
-                                nudOffsetX.Value = 0;
-                                nudOffsetY.Value = -350;
                                 var len = (int)nudSize.Value;
                                 var angle = (int)nudAngle.Value;
                                 var xo = (int)nudOffsetX.Value;
