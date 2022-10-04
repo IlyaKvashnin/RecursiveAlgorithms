@@ -13,29 +13,30 @@ namespace HanoiTowers
     {
         public List<Move> Moves { get; set; } = new List<Move>();
         public List<Move> SolveHanoiRecursive(int DiskCount) {//Solver method
-            var timer = new Stopwatch();
-            List<string> milliSec = new();
-            for (int j = 1; j <=5; j++)
-            {
-                for (int i = 1; i <= 20; i++)
-                {
-                    Moves.Clear();
-                    timer.Start();
+            //var timer = new Stopwatch();
+            //List<string> milliSec = new();
+            //for (int j = 1; j <=5; j++)
+            //{
+            //    for (int i = 1; i <= 20; i++)
+            //    {
+            //        Moves.Clear();
+            //        timer.Start();
 
-                    //moveDisk(DiskCount, 1, 3, 2);
-                    moveDiskRecursive(i, 1, 3, 2);
+            //        //moveDisk(DiskCount, 1, 3, 2);
+            //        moveDiskRecursive(i, 1, 3, 2);
 
-                    timer.Stop();
-                    milliSec.Add(timer.Elapsed.TotalMilliseconds.ToString());
-                    timer.Reset();
+            //        timer.Stop();
+            //        milliSec.Add(timer.Elapsed.TotalMilliseconds.ToString());
+            //        timer.Reset();
 
-                }
-                File.WriteAllLines($"..//..//..//result/result_{j}.txt", milliSec);
+            //    }
+            //    File.WriteAllLines($"..//..//..//result/result_{j}.txt", milliSec);
 
-                milliSec.Clear();
-            }
-            
-            
+            //    milliSec.Clear();
+            //}
+            Moves.Clear();
+            moveDiskRecursive(DiskCount, 1, 3, 2);
+
             return Moves;
         }
         public void moveDiskRecursive(int n, int from, int to, int on)
